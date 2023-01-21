@@ -1,0 +1,21 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 mx-auto pt-4">
+      <h1>Deanna's Task Manager!</h1>
+
+      <div class="row mt-4">
+        <% @tasks.each do |task| %>
+        <div class="col-12 bg-info d-flex justify-content-between align-items-center mb-2 rounded p-2">
+          <h2><%= link_to task.title, task_path(task), class: "plain-link" %></h2>
+          <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do =%>
+            <i class= "fa-regular fa-trash-can" ></i>
+          <% end %>
+        </div>
+        <% end %>
+        <button class="btn-warning btn-sm"><%= link_to "Create a new task", new_task_path, class: "plain-link" %></button>
+      </div>
+
+    </div>
+  </div>
+</div>

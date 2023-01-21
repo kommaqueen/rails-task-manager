@@ -1,0 +1,19 @@
+<%= form_with model: task do |t| %>
+  <div class="form-row align-items-center d-flex">
+    <div class="col-auto">
+      <%= t.label :title %>
+      <%= t.text_field :title %>
+    </div>
+    <div class="col-auto">
+      <%= t.label :details %>
+      <%= t.text_field :details %>
+    </div>
+    <% unless @task.new_record?() %>
+      <div class="col-auto">
+        <%= t.label :completed %>
+        <%= t.check_box :completed %>
+      </div>
+    <% end %>
+    <%= t.submit %>
+  </div>
+<% end %>

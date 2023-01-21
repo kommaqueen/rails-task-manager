@@ -1,0 +1,17 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details%></p>
+
+<%# if task is completed smiley emoji %>
+<% if @task.completed %>
+<p>☺️ Completed!!</p>
+<% else %>
+<p>🤨 Not completed yet!</p>
+<% end %>
+
+<%= link_to("edit this task", edit_task_path)  %>
+
+<%= link_to("back to list", tasks_path) %>
+
+<%= link_to("Delete Task", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) %>
+
+<%# @task.new_record? %>

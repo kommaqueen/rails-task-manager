@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.plain-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* h2 a {
+  color: white;
+  text-decoration: none;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+} */
